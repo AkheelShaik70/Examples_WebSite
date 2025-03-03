@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<style>
+			.c1{
+				border: 1px solid red;
+			}
+			
+			img
+			{
+				border: 1px solid gray;
+				border-radius:2px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h3>JavaScript Programming -- Event Handling </h3>
+		<hr/> 
+		
+		<br/><br/>
+		<img   src="Images1/Image1.jpg"   onmouseover="updateImage(event)"  border="2"  width="80"  height="60"  />
+		<img   src="Images1/Image2.jpg"   onmouseover="updateImage(event)"   border="2"  width="80"  height="60"  />
+		<img   src="Images1/Image3.jpg"   onmouseover="updateImage(event)"   border="2"  width="80"  height="60"  />
+		<img   src="Images1/Image4.jpg" 	 onmouseover="updateImage(event)"   border="2"  width="80"  height="60"  />
+		 
+		<hr/>
+		<img   src="Images1/Image1.jpg"  id="bigImg"  border="2"  width="340"  height="380"  />
+	 	
+		<script> 
+		
+				let prevImg = null;
+				
+				
+			  function updateImage( event ) 
+			  {	  
+
+					if(prevImg  != null)
+					{
+						 prevImg.classList.remove("c1");
+					}
+
+					let bigImgObj = document.getElementById("bigImg");
+					bigImgObj.src = event.target.src;
+					event.target.classList.add("c1");
+					prevImg = event.target;
+			  }	
+			  
+			  
+		 
+		</script>  
+	</body>
+</html>
